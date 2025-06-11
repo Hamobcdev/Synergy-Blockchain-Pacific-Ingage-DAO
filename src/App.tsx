@@ -60,64 +60,84 @@ function App() {
         </div>
       </nav>
 
-      {/* Hero Section with Pacific Wave Pattern */}
-      <section className="pt-20 pb-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50" />
-        
-        {/* Pacific Wave Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <svg className="w-full h-full" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
-            <defs>
-              <pattern id="wave-pattern" x="0" y="0" width="200" height="100" patternUnits="userSpaceOnUse">
-                <path d="M0,50 Q50,20 100,50 T200,50" stroke="#1e40af" strokeWidth="2" fill="none" opacity="0.3"/>
-                <path d="M0,70 Q50,40 100,70 T200,70" stroke="#059669" strokeWidth="1.5" fill="none" opacity="0.2"/>
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#wave-pattern)"/>
-          </svg>
+      {/* Hero Section with Waka Background */}
+      <section className="pt-20 pb-16 relative overflow-hidden min-h-screen flex items-center">
+        {/* Waka Background Image */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-purple-900/70 to-blue-800/80 z-10" />
+          <img 
+            src="/public/Herb-Kane_War-Canoes-of-the-New-Zealand-Maori.jpg" 
+            alt="Traditional Māori Waka"
+            className="w-full h-full object-cover object-center"
+          />
         </div>
 
-        {/* Māori Koru Pattern */}
-        <div className="absolute top-10 right-10 opacity-10">
-          <svg width="120" height="120" viewBox="0 0 120 120">
-            <path d="M60,10 Q90,10 90,40 Q90,70 60,70 Q30,70 30,40 Q30,25 45,25 Q60,25 60,40" 
-                  stroke="#7c3aed" strokeWidth="3" fill="none"/>
-            <path d="M60,40 Q75,40 75,55 Q75,70 60,70" 
-                  stroke="#7c3aed" strokeWidth="2" fill="none"/>
-          </svg>
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-100 to-green-100 text-blue-800 px-6 py-3 rounded-full text-sm font-medium mb-6 border border-blue-200">
+        {/* Waka Voyaging Content */}
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+          <div className="max-w-5xl">
+            <div className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-full text-sm font-medium mb-8 border border-white/30">
               <Zap className="h-4 w-4" />
-              <span>Tāngata Whenua Innovation • Pacific Excellence</span>
+              <span>Waka Hourua • Voyaging to New Digital Horizons</span>
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+            
+            <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight">
               Ingage DAO
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-green-600">
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-300 to-purple-300">
                 Pacific Innovation
               </span>
             </h1>
-            <p className="text-xl text-gray-700 mb-8 leading-relaxed max-w-3xl mx-auto">
-              A decentralized system rooted in <strong>manaakitanga</strong> and <strong>whakatōhea</strong>, 
-              built on the <strong>REM (Relationship Equity Management)</strong> framework. 
-              Delivering transparent performance tracking and community collaboration for 
+
+            {/* Waka Metaphor Section */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8 border border-white/20">
+              <h2 className="text-2xl font-bold mb-4 text-cyan-300">Te Waka o te Taiao Hou • The Vessel to New Worlds</h2>
+              <p className="text-xl leading-relaxed mb-6">
+                Like our tīpuna who navigated vast Pacific waters in their waka hourua, we embark on a collective journey 
+                into the blockchain frontier. <strong>Every paddler matters</strong> — each contribution propels us toward 
+                new horizons of transparency, equity, and community prosperity.
+              </p>
+              <div className="grid md:grid-cols-3 gap-6 text-center">
+                <div className="bg-white/10 p-4 rounded-xl">
+                  <div className="font-bold text-lg text-cyan-300">Unified Purpose</div>
+                  <div className="text-sm opacity-90">Like paddlers in rhythm</div>
+                </div>
+                <div className="bg-white/10 p-4 rounded-xl">
+                  <div className="font-bold text-lg text-blue-300">Shared Navigation</div>
+                  <div className="text-sm opacity-90">Guided by collective wisdom</div>
+                </div>
+                <div className="bg-white/10 p-4 rounded-xl">
+                  <div className="font-bold text-lg text-purple-300">New Territories</div>
+                  <div className="text-sm opacity-90">Blockchain innovation awaits</div>
+                </div>
+              </div>
+            </div>
+
+            <p className="text-xl mb-8 leading-relaxed max-w-4xl">
+              Built on the <strong>REM (Relationship Equity Management)</strong> framework, 
+              our DAO honors <strong>manaakitanga</strong> and <strong>whakatōhea</strong> — 
+              delivering transparent performance tracking and community collaboration for 
               Pacific Islands and Indigenous communities.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            
+            <div className="flex flex-col sm:flex-row gap-4 items-start">
               <button 
                 onClick={() => scrollToSection('about')}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 flex items-center space-x-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 flex items-center space-x-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
-                <span>Explore Our Vision</span>
+                <span>Join the Voyage</span>
                 <ChevronDown className="h-5 w-5" />
               </button>
-              <div className="text-sm text-gray-600 flex items-center space-x-2">
+              <div className="text-sm text-white/80 flex items-center space-x-2 bg-white/10 px-4 py-3 rounded-lg backdrop-blur-sm">
                 <Calendar className="h-4 w-4" />
                 <span>Prepared: June 12, 2025 • Synergy Blockchain Pacific</span>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+          <div className="animate-bounce">
+            <ChevronDown className="h-8 w-8 text-white/60" />
           </div>
         </div>
       </section>
