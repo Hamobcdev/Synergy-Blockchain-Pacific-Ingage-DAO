@@ -47,7 +47,7 @@ function App() {
               </div>
               <div>
                 <span className="text-xl font-bold text-gray-900">
-                  Ingage DAO
+                  TE WAKA DAO
                 </span>
                 <div className="text-xs text-gray-500 font-medium">
                   Pacific Innovation
@@ -96,9 +96,19 @@ function App() {
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-purple-900/70 to-blue-800/80 z-10" />
           <img
-            src="/Herb-Kane_War-Canoes-of-the-New-Zealand-Maori.jpg"
+            src={`${
+              import.meta.env.BASE_URL
+            }Herb-Kane_War-Canoes-of-the-New-Zealand-Maori.jpg`}
             alt="Traditional Māori Waka"
             className="w-full h-full object-cover object-center"
+            onError={(e) => {
+              console.error("Image failed to load from:", e.currentTarget.src);
+              // Fallback to try without base URL
+              if (e.currentTarget.src.includes(import.meta.env.BASE_URL)) {
+                e.currentTarget.src =
+                  "/Herb-Kane_War-Canoes-of-the-New-Zealand-Maori.jpg";
+              }
+            }}
           />
         </div>
 
@@ -730,7 +740,8 @@ function App() {
               </h3>
               <div className="space-y-3 text-gray-600 mb-6">
                 <div>
-                  <strong>Prepared by:</strong> Synergy Blockchain Pacific
+                  <strong>Prepared and intellectual property of:</strong>{" "}
+                  Synergy Blockchain Pacific
                 </div>
                 <div>
                   <strong>Date:</strong> June 12, 2025
